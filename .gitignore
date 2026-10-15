@@ -1,0 +1,11 @@
+# Private reference material — never commit
+*.eml
+image001.png
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
