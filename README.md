@@ -5,9 +5,9 @@ brand-new sneakers on kids' feet and books in their hands. It carries forward th
 mission of Kevin Holmes' *Gift of Sole* program (Kansas City) under a new,
 independent organization.
 
-> **Status: concept / draft.** The copy on the page is placeholder text written to
-> show tone and structure. Real mission language, program details, service area,
-> and impact numbers are pending (see the open questions below).
+> **Status: draft 2.** Kevin's first round of feedback is folded in — mission,
+> programs, ages, service area, tone, and the chosen design direction (Heritage).
+> Some copy is still placeholder and a few items are open (see below).
 
 ## What's here
 
@@ -26,8 +26,8 @@ python3 -m http.server 8000
 
 ## Review tools built into the page
 
-- **Direction switcher** (top bar): three brand looks — *Heritage*, *Court*,
-  *Fresh* — all derived from the logo. Switch to compare.
+- **Direction switcher** (top bar): four brand looks — *Heritage* (default), *Court*,
+  *Fresh*, and *Playground* — all derived from the logo. Switch to compare.
 - **Content notes** toggle: reveals callouts throughout the page, each mapped to
   an open question that needs an answer before the real copy goes in.
 
@@ -40,12 +40,18 @@ recurring, text/QR) · become a corporate sponsor · become a community partner 
 contact · impact/news. Later phases: gala site, sponsor packages, board &
 volunteer tooling.
 
-## Open questions (pending)
+## Decided (Kevin, draft 2)
 
-Mission wording · programs at launch (shoes, books, or both) · ages served ·
-service area · how kids are reached · donation platform · financial/banking setup ·
-partner priorities · how much Gift of Sole / Kansas City history to feature ·
-contact routing · launch timing.
+Design direction → **Heritage** · programs → **sneakers + books** at launch ·
+ages → **K–12 / up to 18** · service area → **Twin Cities metro** ·
+tone → **heartfelt but measured** · Kansas City history → **a lighter nod**, with
+the ~$500K / ~4,000-pairs track record shown as proof.
+
+## Still open
+
+Kevin's old stories (link to KSHB vs. upload clips) · donation platform & bank
+(blocked on the nonprofit filing with the state) · how kids are reached · contact
+routing · launch timing · later-phase scope · verify the mission stats before launch.
 
 ## Credits
 

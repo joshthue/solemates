@@ -13,7 +13,7 @@
      Layout: single scrolling page, centered 1140px column, full-bleed
      color bands. Identity pulled from the logo: teal banner + gold
      outline + warm paper, athletic display type, shoelace motif.
-     Three switchable brand directions; committed single-theme per
+     Four switchable brand directions; committed single-theme per
      direction (Court direction is dark).
      ============================================================ */
 
@@ -22,7 +22,7 @@
     --bg:#F3EEE3; --surface:#FBF8F1; --surface-2:#ECE4D4;
     --ink:#16211F; --muted:#5B6560; --line:#DBD1BF;
     --brand:#2C6E68; --brand-deep:#1E4F4A; --brand-soft:#D8E4E0;
-    --accent:#E3A325; --accent-deep:#C4871A;
+    --accent:#E3A325; --accent-deep:#C4871A; --accent2:#E3A325;
     --on-brand:#FBF8F1; --on-accent:#16211F;
     --plate:#FBF8F1;
     --f-display:'Anton','Arial Narrow',sans-serif;
@@ -35,7 +35,7 @@
     --bg:#0E1B19; --surface:#152724; --surface-2:#1D332F;
     --ink:#F2EFE6; --muted:#9FB0AB; --line:#2A3E39;
     --brand:#44A096; --brand-deep:#2C6E68; --brand-soft:#1D332F;
-    --accent:#F0B429; --accent-deep:#D89A1C;
+    --accent:#F0B429; --accent-deep:#D89A1C; --accent2:#F0B429;
     --on-brand:#0E1B19; --on-accent:#0E1B19;
     --plate:#F7F3EA;
     color-scheme:dark;
@@ -45,8 +45,18 @@
     --bg:#FFFFFF; --surface:#F4FAF8; --surface-2:#E6F2EF;
     --ink:#13302C; --muted:#5B6F6A; --line:#DCEAE6;
     --brand:#159A86; --brand-deep:#0F7667; --brand-soft:#DCF1EC;
-    --accent:#F5B50F; --accent-deep:#D29800;
+    --accent:#F5B50F; --accent-deep:#D29800; --accent2:#F5B50F;
     --on-brand:#FFFFFF; --on-accent:#13302C;
+    --plate:#FFFFFF;
+    color-scheme:light;
+  }
+  /* ---- Direction D: PLAYGROUND (bright & colorful) ---- */
+  :root[data-brand="pop"]{
+    --bg:#FFF7EC; --surface:#FFFFFF; --surface-2:#FDEBD2;
+    --ink:#14302A; --muted:#5E6B63; --line:#F2E2C8;
+    --brand:#0FA394; --brand-deep:#0B7D72; --brand-soft:#D4F2EC;
+    --accent:#FFB81C; --accent-deep:#E89A00; --accent2:#FF6B4A;
+    --on-brand:#FFFFFF; --on-accent:#14302A;
     --plate:#FFFFFF;
     color-scheme:light;
   }
@@ -143,7 +153,7 @@
   .pill{display:inline-flex;align-items:center;gap:9px;background:var(--surface);
     border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 11px;
     font-size:.8rem;font-weight:700;color:var(--brand-deep)}
-  .pill .sq{width:9px;height:9px;border-radius:3px;background:var(--accent)}
+  .pill .sq{width:9px;height:9px;border-radius:3px;background:var(--accent2)}
   h1{font-family:var(--f-display);font-weight:400;
     font-size:clamp(2.1rem,5vw,4rem);line-height:.98;letter-spacing:.5px;
     margin:20px 0 0}
@@ -221,7 +231,7 @@
   .stat{min-width:0}
   .stat .n{font-family:var(--f-display);font-size:clamp(2.6rem,5vw,3.8rem);
     line-height:.9;color:var(--ink);letter-spacing:.5px;font-variant-numeric:tabular-nums}
-  .stat .n span{color:var(--accent)}
+  .stat .n span{color:var(--accent2)}
   .stat .l{margin-top:10px;font-weight:600;color:var(--muted);font-size:.92rem}
   .samp{display:inline-block;margin-top:8px;font-size:.68rem;font-weight:800;
     letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep);
@@ -353,13 +363,14 @@
 <div class="toolbar">
   <div class="wrap">
     <span class="tb-tag"><span class="dot"></span>Concept preview</span>
-    <span class="tb-sub">Solemates Collective · homepage · draft 1</span>
+    <span class="tb-sub">Solemates Collective · homepage · draft 2</span>
     <div class="tb-group">
       <span class="tb-label">Direction</span>
       <div class="seg" role="group" aria-label="Design direction">
         <button data-brand="heritage" aria-pressed="true">Heritage</button>
         <button data-brand="court" aria-pressed="false">Court</button>
         <button data-brand="fresh" aria-pressed="false">Fresh</button>
+        <button data-brand="pop" aria-pressed="false">Playground</button>
       </div>
     </div>
     <button class="switch" id="notesToggle" aria-pressed="false">
@@ -413,12 +424,6 @@
       </div>
       <p class="trust">Founded by <b>Kevin Holmes</b>, built on the proven Gift of Sole
         model he started — now carried forward under Solemates Collective.</p>
-      <div class="note">
-        <span class="q">Q1</span>
-        <div class="n-body"><b>Mission, in Kevin's words</b>
-          <p>Headline and lede are placeholders. What should someone understand
-          immediately about Solemates and why it exists?</p></div>
-      </div>
     </div>
   </div>
 </section>
@@ -428,19 +433,23 @@
   <div class="wrap mission-grid">
     <div>
       <span class="eyebrow">Why we exist</span>
-      <p class="big">A new pair of shoes changes how a kid walks into a room.</p>
+      <p class="big">New shoes change how a kid walks in. A good book changes where they can go.</p>
     </div>
     <div>
-      <p class="muted">Too many kids start the school year in shoes that are worn
-        through or two sizes too small — and a new pair lifts that weight off a
-        parent, too. Solemates meets kids where they already are, through the
-        schools and community groups they trust, with shoes and books that are
-        theirs to keep.</p>
+      <p class="muted">Nearly 1 in 5 students is bullied at school — and that teasing
+        is so often tied to something as simple as the shoes on a kid's feet. Kevin
+        was one of those kids. Too many children also fall behind on reading early,
+        and those who do are far likelier to drop out. Solemates takes on both, for
+        Twin Cities kids from kindergarten through their senior year: brand-new
+        sneakers that let them show up with confidence, and a book of their own that
+        opens the next door.</p>
       <div class="note on-dark">
-        <span class="q">Q4</span>
-        <div class="n-body"><b>Service area</b>
-          <p>Draft copy assumes the Twin Cities. Start there, metro-wide,
-          statewide, or somewhere else?</p></div>
+        <span class="q">Check</span>
+        <div class="n-body"><b>Verify the mission stats</b>
+          <p>These come from Kevin's notes. The "1 in 5 bullied" and the
+          third-grade-reading / dropout link hold up; I left out his 54% literacy
+          figure, which looks like an adult-literacy stat — worth a verified source
+          before launch.</p></div>
       </div>
     </div>
   </div>
@@ -454,8 +463,9 @@
         <span class="eyebrow">The program</span>
         <h2>What a kid receives</h2>
       </div>
-      <p class="section-lede">A simple promise, delivered with dignity: everything
-        is new, it fits, and it belongs to them.</p>
+      <p class="section-lede">A simple promise, delivered with dignity — for Twin
+        Cities kids from kindergarten through 12th grade: everything is new, it
+        fits, and it belongs to them.</p>
     </div>
     <div class="cards">
       <div class="card">
@@ -469,7 +479,7 @@
         <div class="cico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h7v16H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-5v16h5a2 2 0 0 1 2 2z"/></svg></div>
         <h3>A book to keep</h3>
         <p>Pairing every pair with a book builds a small library at home and a
-          reason to come back. Launching alongside shoes — or as phase two.</p>
+          reason to come back. Part of the program from day one — not a someday add-on.</p>
         <span class="tagline">Theirs to keep</span>
       </div>
       <div class="card">
@@ -480,12 +490,6 @@
         <span class="tagline">Through partners</span>
       </div>
     </div>
-    <div class="note">
-      <span class="q">Q2·3</span>
-      <div class="n-body"><b>Programs &amp; ages at launch</b>
-        <p>These cards assume sneakers + books. Confirm: shoes only, or both from
-        Day 1? And what age / grade range are we serving?</p></div>
-    </div>
   </div>
 </section>
 
@@ -494,23 +498,24 @@
   <div class="wrap">
     <div class="head-row">
       <div>
-        <span class="eyebrow">Impact</span>
-        <h2>The difference, in numbers</h2>
+        <span class="eyebrow">Proven in Kansas City</span>
+        <h2>A model that already works</h2>
       </div>
-      <p class="section-lede">A snapshot panel for the homepage. Figures below are
-        placeholders to show the layout — real totals replace them as the program runs.</p>
+      <p class="section-lede">Before Solemates, there was Gift of Sole — the program
+        Kevin built in Kansas City. Here's what that model has already done.</p>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n">2,500<span>+</span></div><div class="l">pairs placed on kids' feet</div><span class="samp">Sample</span></div>
-      <div class="stat"><div class="n">40</div><div class="l">schools &amp; community partners</div><span class="samp">Sample</span></div>
-      <div class="stat"><div class="n">12</div><div class="l">Twin Cities neighborhoods reached</div><span class="samp">Sample</span></div>
-      <div class="stat"><div class="n">100<span>%</span></div><div class="l">brand-new footwear</div></div>
+      <div class="stat"><div class="n">~$500K</div><div class="l">raised for kids since 2021</div></div>
+      <div class="stat"><div class="n">~4,000</div><div class="l">pairs of new sneakers placed</div></div>
+      <div class="stat"><div class="n">2021</div><div class="l">the year it all started</div></div>
+      <div class="stat"><div class="n">100<span>%</span></div><div class="l">brand-new, every pair</div></div>
     </div>
     <div class="note">
       <span class="q">Q6</span>
-      <div class="n-body"><b>What to carry over from Gift of Sole</b>
-        <p>Which metrics matter most to show here? And which parts of the old
-        model should move over as-is vs. change?</p></div>
+      <div class="n-body"><b>Kevin's Kansas City stories</b>
+        <p>Kevin wants a few of his Gift of Sole stories here as proof. Open for the
+        group: link to the pieces still on KSHB's site, or upload the clips he has
+        saved? (Leaning: link what's live, upload any that have gone dead.)</p></div>
     </div>
   </div>
 </section>
@@ -551,9 +556,10 @@
     </div>
     <div class="note">
       <span class="q">Q7·8·9</span>
-      <div class="n-body"><b>Donations &amp; partners</b>
-        <p>Is a donation platform chosen yet, and is the Solemates bank account
-        ready to receive gifts? Which partner types do we build pathways for first?</p></div>
+      <div class="n-body"><b>Donations not live yet</b>
+        <p>Giving switches on once the nonprofit paperwork is active with the state
+        and the bank account is set up — that's the current blocker. Platform
+        (online, recurring, text/QR) and partner priorities still to decide.</p></div>
     </div>
   </div>
 </section>
@@ -572,16 +578,10 @@
       <p class="quote">"I got teased as a kid for the worn-out sneakers I had to
         wear. Solemates is about making sure no kid has to feel that."</p>
       <p class="section-lede">From that experience, Kevin Holmes built Gift of Sole
-        in Kansas City and grew it to thousands of pairs and hundreds of thousands
-        raised. Solemates Collective carries that mission forward in Minnesota —
-        same heart, new name, and now books too.</p>
+        in Kansas City and grew it to thousands of pairs and nearly half a million
+        dollars raised. Solemates Collective carries that mission forward in
+        Minnesota — same heart, new name, and now books too.</p>
       <p class="byline">Kevin Holmes<span>Founder · Anchor &amp; Reporter, KARE 11</span></p>
-      <div class="note">
-        <span class="q">Q12</span>
-        <div class="n-body"><b>How much Gift of Sole history to tell</b>
-          <p>How much of the Gift of Sole origin and your role in it should live in
-          this story section?</p></div>
-      </div>
     </div>
   </div>
 </section>
