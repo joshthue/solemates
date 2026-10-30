@@ -14,9 +14,14 @@ independent organization.
 A single self-contained page — no build step, no dependencies.
 
 ```
-index.html            # the whole site (inline CSS + JS)
+index.html            # the concept homepage (inline CSS + JS, review controls)
+coming-soon.html      # public "launching soon" splash — logo embedded, one file to host
 solemates-logo.png    # Kevin's logo, trimmed for web
 ```
+
+`coming-soon.html` is the splash to put on the live domain now (e.g. GoDaddy):
+it's fully self-contained, so upload it as `index.html` on the host. Swap the
+placeholder `hello@solematescollective.org` address for the real one first.
 
 Open `index.html` in any browser, or serve the folder:
 
