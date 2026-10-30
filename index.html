@@ -13,7 +13,7 @@
      Layout: single scrolling page, centered 1140px column, full-bleed
      color bands. Identity pulled from the logo: teal banner + gold
      outline + warm paper, athletic display type, shoelace motif.
-     Four switchable brand directions; committed single-theme per
+     Seven switchable brand directions; committed single-theme per
      direction (Court direction is dark).
      ============================================================ */
 
@@ -59,6 +59,36 @@
     --on-brand:#FFFFFF; --on-accent:#14302A;
     --plate:#FFFFFF;
     color-scheme:light;
+  }
+  /* ---- Direction E: SUNRISE (warm & hopeful) ---- */
+  :root[data-brand="sunrise"]{
+    --bg:#FFF1E7; --surface:#FFFFFF; --surface-2:#FFE1CE;
+    --ink:#2A1F18; --muted:#705E53; --line:#F3D8C6;
+    --brand:#1F8A7E; --brand-deep:#166B61; --brand-soft:#D6EEE9;
+    --accent:#E8553A; --accent-deep:#C73E25; --accent2:#F2A33A;
+    --on-brand:#FFFFFF; --on-accent:#FFFFFF;
+    --plate:#FFFFFF;
+    color-scheme:light;
+  }
+  /* ---- Direction F: HYPE (teen / streetwear, dark) ---- */
+  :root[data-brand="hype"]{
+    --bg:#141317; --surface:#1E1C23; --surface-2:#262430;
+    --ink:#F4F2F7; --muted:#A8A3B5; --line:#332F3D;
+    --brand:#17E6C4; --brand-deep:#10B89C; --brand-soft:#1E2A2C;
+    --accent:#FFD23F; --accent-deep:#E6B412; --accent2:#FF4D7D;
+    --on-brand:#0A0A0C; --on-accent:#0A0A0C;
+    --plate:#F4F2F7;
+    color-scheme:dark;
+  }
+  /* ---- Direction G: MIDNIGHT (navy, premium) ---- */
+  :root[data-brand="midnight"]{
+    --bg:#0C1626; --surface:#142238; --surface-2:#1B2C49;
+    --ink:#EAF0F7; --muted:#9DB0C8; --line:#263650;
+    --brand:#33C2B0; --brand-deep:#1F8A7E; --brand-soft:#16304A;
+    --accent:#F2B33A; --accent-deep:#D6971F; --accent2:#F2B33A;
+    --on-brand:#06101C; --on-accent:#06101C;
+    --plate:#F7F3EA;
+    color-scheme:dark;
   }
 
   *{box-sizing:border-box}
@@ -371,6 +401,9 @@
         <button data-brand="court" aria-pressed="false">Court</button>
         <button data-brand="fresh" aria-pressed="false">Fresh</button>
         <button data-brand="pop" aria-pressed="false">Playground</button>
+        <button data-brand="sunrise" aria-pressed="false">Sunrise</button>
+        <button data-brand="hype" aria-pressed="false">Hype</button>
+        <button data-brand="midnight" aria-pressed="false">Midnight</button>
       </div>
     </div>
     <button class="switch" id="notesToggle" aria-pressed="false">

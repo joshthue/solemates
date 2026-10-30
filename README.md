@@ -26,8 +26,9 @@ python3 -m http.server 8000
 
 ## Review tools built into the page
 
-- **Direction switcher** (top bar): four brand looks — *Heritage* (default), *Court*,
-  *Fresh*, and *Playground* — all derived from the logo. Switch to compare.
+- **Direction switcher** (top bar): seven brand looks — *Heritage* (default), *Court*,
+  *Fresh*, *Playground*, *Sunrise*, *Hype* (teen / streetwear), and *Midnight* — all
+  derived from the logo. Switch to compare.
 - **Content notes** toggle: reveals callouts throughout the page, each mapped to
   an open question that needs an answer before the real copy goes in.
 
