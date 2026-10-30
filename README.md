@@ -29,6 +29,8 @@ python3 -m http.server 8000
 - **Direction switcher** (top bar): seven brand looks — *Heritage* (default), *Court*,
   *Fresh*, *Playground*, *Sunrise*, *Hype* (teen / streetwear), and *Midnight* — all
   derived from the logo. Switch to compare.
+- **Invert** toggle: flips the current direction to its opposite light/dark
+  polarity, so each look can be judged both ways.
 - **Content notes** toggle: reveals callouts throughout the page, each mapped to
   an open question that needs an answer before the real copy goes in.
 

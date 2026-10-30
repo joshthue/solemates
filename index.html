@@ -91,6 +91,36 @@
     color-scheme:dark;
   }
 
+  /* ---------- inverted variants: flip each direction's light/dark polarity ---------- */
+  :root[data-brand="heritage"][data-invert="1"]{
+    --bg:#191511; --surface:#231E19; --surface-2:#2D2720; --ink:#F3EEE3;
+    --muted:#B3A68F; --line:#39322A; --brand-soft:#22332F; --plate:#FBF8F1; color-scheme:dark;
+  }
+  :root[data-brand="fresh"][data-invert="1"]{
+    --bg:#0B1512; --surface:#13201C; --surface-2:#1C2E27; --ink:#EAF4F0;
+    --muted:#9BB2AA; --line:#243730; --brand-soft:#15302A; --plate:#FFFFFF; color-scheme:dark;
+  }
+  :root[data-brand="pop"][data-invert="1"]{
+    --bg:#17120E; --surface:#221B15; --surface-2:#2C231B; --ink:#FFF7EC;
+    --muted:#B8A892; --line:#3A2E24; --brand-soft:#17332D; --plate:#FFFFFF; color-scheme:dark;
+  }
+  :root[data-brand="sunrise"][data-invert="1"]{
+    --bg:#1C1510; --surface:#271D17; --surface-2:#32261D; --ink:#FFF1E7;
+    --muted:#BCA593; --line:#3F2F23; --brand-soft:#1C332D; --plate:#FFFFFF; color-scheme:dark;
+  }
+  :root[data-brand="court"][data-invert="1"]{
+    --bg:#F1F5F3; --surface:#FFFFFF; --surface-2:#E2ECE8; --ink:#0E1B19;
+    --muted:#586A65; --line:#D3DFDA; --brand-soft:#D8E8E4; --plate:#FFFFFF; color-scheme:light;
+  }
+  :root[data-brand="hype"][data-invert="1"]{
+    --bg:#F5F4F7; --surface:#FFFFFF; --surface-2:#EAE8F0; --ink:#141317;
+    --muted:#5D5968; --line:#DCD9E4; --brand-soft:#D7F5EF; --plate:#FFFFFF; color-scheme:light;
+  }
+  :root[data-brand="midnight"][data-invert="1"]{
+    --bg:#EEF3F9; --surface:#FFFFFF; --surface-2:#DFE9F3; --ink:#0C1626;
+    --muted:#5B6A80; --line:#D2DEEC; --brand-soft:#D6ECE8; --plate:#FFFFFF; color-scheme:light;
+  }
+
   *{box-sizing:border-box}
   body{background:var(--bg);color:var(--ink);font-family:var(--f-sans);
     line-height:1.6;-webkit-font-smoothing:antialiased;font-weight:400;
@@ -337,9 +367,9 @@
   .note .n-body{min-width:0}
   .note .n-body b{display:block;font-weight:800;font-size:.9rem;margin-bottom:2px}
   .note .n-body p{color:var(--muted);font-size:.9rem}
-  .note.on-dark{background:rgba(255,255,255,.06);border-color:var(--accent);
-    border-left-color:var(--accent)}
-  .note.on-dark .n-body p{color:color-mix(in srgb,#fff 72%,transparent)}
+  .note.on-dark{background:color-mix(in srgb,currentColor 9%,transparent);
+    border-color:var(--accent);border-left-color:var(--accent)}
+  .note.on-dark .n-body p{color:color-mix(in srgb,currentColor 72%,transparent)}
   .notes-hint{display:none}
   .notes-on .notes-hint{display:inline-flex}
 
@@ -406,6 +436,9 @@
         <button data-brand="midnight" aria-pressed="false">Midnight</button>
       </div>
     </div>
+    <button class="switch" id="invertToggle" aria-pressed="false">
+      <span class="ind"></span>Invert
+    </button>
     <button class="switch" id="notesToggle" aria-pressed="false">
       <span class="ind"></span>Content notes
     </button>
@@ -705,9 +738,11 @@
 <script>
 (function(){
   var root=document.documentElement;
-  var KEYB='sole-brand', KEYN='sole-notes';
-  try{var sb=localStorage.getItem(KEYB); if(sb) setBrand(sb,true);}catch(e){}
+  var KEYB='sole-brand', KEYN='sole-notes', KEYI='sole-invert';
+  var sb='heritage'; try{var s=localStorage.getItem(KEYB); if(s) sb=s;}catch(e){}
+  setBrand(sb,true);
   try{var sn=localStorage.getItem(KEYN); if(sn==='1') setNotes(true,true);}catch(e){}
+  try{var si=localStorage.getItem(KEYI); if(si==='1') setInvert(true,true);}catch(e){}
 
   function setBrand(b,quiet){
     root.dataset.brand=b;
@@ -722,11 +757,19 @@
     t.setAttribute('aria-pressed',on?'true':'false');
     if(!quiet){try{localStorage.setItem(KEYN,on?'1':'0');}catch(e){}}
   }
+  function setInvert(on,quiet){
+    if(on){root.dataset.invert='1';}else{root.removeAttribute('data-invert');}
+    document.getElementById('invertToggle').setAttribute('aria-pressed',on?'true':'false');
+    if(!quiet){try{localStorage.setItem(KEYI,on?'1':'0');}catch(e){}}
+  }
   document.querySelectorAll('.seg button').forEach(function(btn){
     btn.addEventListener('click',function(){setBrand(btn.dataset.brand);});
   });
   document.getElementById('notesToggle').addEventListener('click',function(){
     setNotes(!document.body.classList.contains('notes-on'));
+  });
+  document.getElementById('invertToggle').addEventListener('click',function(){
+    setInvert(root.getAttribute('data-invert')!=='1');
   });
 
   // mobile menu
